@@ -11,6 +11,7 @@ export default async function Home() {
       Authorization: `Bearer ${TOKEN}`,
     },
   });
+
   const data = await response.json();
 
   return (

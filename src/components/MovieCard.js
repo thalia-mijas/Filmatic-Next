@@ -13,8 +13,10 @@ export default function MovieCard({ title, poster_path, id }) {
             className="movie-poster-img"
             src="/poster_filmatic.png"
             alt="Default poster"
-            width={200}
-            height={250}
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{ width: "80%", height: "auto" }}
             priority
           />
         ) : (
@@ -22,8 +24,10 @@ export default function MovieCard({ title, poster_path, id }) {
             className="movie-poster-img"
             src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             alt={`Poster of ${title}`}
-            width={200}
-            height={250}
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{ width: "80%", height: "auto" }}
             priority
           />
         )}

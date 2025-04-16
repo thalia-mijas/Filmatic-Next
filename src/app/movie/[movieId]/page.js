@@ -55,6 +55,9 @@ export default async function Details({ params }) {
             <p>
               <b>Vote average:</b> {data.vote_average}
             </p>
+            <p>
+              <b>Release date:</b> {data.release_date}
+            </p>
           </div>
         </div>
       </div>

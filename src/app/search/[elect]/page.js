@@ -14,9 +14,6 @@ export default async function Searcher({ params }) {
   });
   const data = await response.json();
 
-  console.log(params.elect);
-  console.log(data);
-
   return (
     <>
       <Header></Header>
