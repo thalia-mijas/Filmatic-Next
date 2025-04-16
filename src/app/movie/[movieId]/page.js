@@ -1,17 +1,19 @@
-import Header from "@/components/Header/Header.js";
+import Image from "next/image";
+import Header from "@/components/Header.js";
 
 const API_URL = "https://api.themoviedb.org/3";
 const TOKEN = process.env.DB_TOKEN;
 
 export default async function Details({ params }) {
-  const response = await fetch(`${API_URL}/movie/${params.movieId}`, {
+  const { movieId } = await params;
+
+  const response = await fetch(`${API_URL}/movie/${movieId}`, {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
     },
   });
-  const data = await response.json();
 
-  console.log(data);
+  const data = await response.json();
 
   return (
     <>
@@ -21,11 +23,20 @@ export default async function Details({ params }) {
         <div className="movie-details">
           <div className="movie-img">
             {data.poster_path === null ? (
-              <img alt={`Default poster`} src="/poster_filmatic.png" />
+              <Image
+                className="movie-img-img"
+                src="/poster_filmatic.png"
+                alt="Default poster"
+                priority
+              />
             ) : (
-              <img
-                alt={`Poster of ${data.title}`}
+              <Image
+                className="movie-img-img"
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                alt={`Poster of ${data.title}`}
+                width={225}
+                height={300}
+                priority
               />
             )}
           </div>

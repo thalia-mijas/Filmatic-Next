@@ -1,21 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import "./Header.css";
 
 export default function Header() {
   const [searchMovie, setSearchMovie] = useState("");
   const router = useRouter();
 
   const handleKeyDown = (event) => {
-    console.log(event);
     if (searchMovie != "") {
-      if (event.type === "keydown") {
-        router.push(`search/${searchMovie.replace(" ", "+")}`);
+      if (event.key === "Enter") {
+        router.push(`../search/${searchMovie.replace(" ", "+")}`);
       }
-    } else {
-      router.push(`/`);
     }
   };
 
@@ -23,7 +20,13 @@ export default function Header() {
     <>
       <div className="cont-header">
         <div className="title">
-          <img className="logo" src="/logo.svg" alt="Logo Filmatic" />
+          <Image
+            src="/logo.svg"
+            alt="Logo Filmatic"
+            width={75}
+            height={75}
+            priority
+          />
           <h1>Filmatic</h1>
         </div>
         <input

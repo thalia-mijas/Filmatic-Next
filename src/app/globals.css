@@ -26,3 +26,119 @@ a {
   color: var(--background);
   text-decoration: none;
 }
+
+/* Header */
+.cont-header {
+  position: sticky;
+  right: 0;
+  top: 0;
+  background-color: #242424;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  justify-self: center;
+}
+
+.title img {
+  padding-right: 4px;
+}
+
+input {
+  height: 30px;
+  padding: 0px 4px;
+  font-size: medium;
+}
+
+/* Home */
+.card-cont {
+  width: calc(100vw - 16px);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.movie-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+h3 {
+  color: whitesmoke;
+}
+
+.movie-poster-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Details */
+.movie-page {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+
+h2 {
+  margin-bottom: 16px;
+}
+
+.movie-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.movie-img {
+  display: flex;
+  place-content: center;
+}
+
+.movie-info {
+  padding: 1rem 2rem;
+  text-align: justify;
+}
+
+@media (min-width: 750px) {
+
+  /* Header */
+  .cont-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+  }
+
+  /* Home */
+  .card-cont {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+
+  /* Details */
+  .movie-page {
+    padding: 32px;
+  }
+  .movie-details {
+    flex-direction: row;
+  } 
+
+}
+
