@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "image.tmdb.org"], // <== Domain name
+    remotePatterns: [new URL("https://image.tmdb.org/t/p/w500/**")], // <== Domain name
   },
 };
 
