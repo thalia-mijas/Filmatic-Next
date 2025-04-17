@@ -17,7 +17,6 @@ export default async function Details({ params }) {
 
   return (
     <>
-      <Header></Header>
       <div className="movie-page">
         <h2>{data.title}</h2>
         <div className="movie-details">

@@ -1,5 +1,4 @@
 import MovieCard from "@/components/MovieCard";
-import Header from "@/components/Header.js";
 
 const API_URL = "https://api.themoviedb.org/3";
 const TOKEN = process.env.DB_TOKEN;
@@ -16,7 +15,6 @@ export default async function Searcher({ params }) {
 
   return (
     <>
-      <Header></Header>
       <div className="card-cont">
         {data.results.map((movie) => (
           <MovieCard
@@ -24,7 +22,7 @@ export default async function Searcher({ params }) {
             title={movie.title}
             poster_path={movie.poster_path}
             id={movie.id}
-          ></MovieCard>
+          />
         ))}
       </div>
     </>

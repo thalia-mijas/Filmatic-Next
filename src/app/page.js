@@ -1,5 +1,4 @@
 import MovieCard from "@/components/MovieCard.js";
-import Header from "@/components/Header.js";
 import "./page.module.css";
 
 const API_URL = "https://api.themoviedb.org/3";
@@ -16,7 +15,6 @@ export default async function Home() {
 
   return (
     <>
-      <Header></Header>
       <div className="card-cont">
         {data.results?.map((movie) => (
           <MovieCard
@@ -24,7 +22,7 @@ export default async function Home() {
             title={movie.title}
             poster_path={movie.poster_path}
             id={movie.id}
-          ></MovieCard>
+          />
         ))}
       </div>
     </>
