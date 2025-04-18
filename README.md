@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Aplicación de Películas - SSR (Next.js)
 
-## Getting Started
+Este proyecto es un sitio web desarrollado con **Next.js**. Permite a los usuarios explorar películas populares, ver detalles de películas y buscar películas utilizando el sistema de rutas basado en el directorio `app/` y renderizado del lado del servidor (**SSR**). Consume **The Movie Database API (TMDB)** para mostrar información de películas.
 
-First, run the development server:
+---
+## 🌐 Demo en linea
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Vea la demostración en vivo del proyecto implementado en Vercel: https://filmatic-next.vercel.app/
+
+---
+
+## 🚀 Funcionalidades
+
+- Página de inicio con lista de películas populares (https://filmatic-next.vercel.app/).
+- Página de detalle con título, géneros, sinopsis, calificación y fecha de lanzamiento (https://filmatic-next.vercel.app/details/{id}).
+- Página de búsqueda por título, se lista películas que coinciden con la búsqueda (https://filmatic-next.vercel.app/search/{elect}).
+- Enrutamiento dinámico con App Router (Next.js).
+
+---
+
+## 🛠️ Tecnologías
+
+- Next.js 13+ (App Router)
+- React
+- TMDB API
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
+    └── 📁Filmatic-Next
+        └── .env
+        └── .env.example
+        └── eslint.config.mjs
+        └── jsconfig.json
+        └── next.config.mjs
+        └── package-lock.json
+        └── package.json
+        └── 📁public
+            └── filmatic.png
+            └── logo.svg
+            └── poster_filmatic.png
+        └── README.md
+        └── 📁src
+            └── 📁app
+                └── favicon.ico
+                └── globals.css
+                └── layout.js
+                └── 📁movie
+                    └── 📁[movieId]
+                        └── page.js
+                └── page.js
+                └── page.module.css
+                └── 📁search
+                    └── 📁[elect]
+                        └── page.js
+            └── 📁components
+                └── Header.js
+                └── MovieCard.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ▶️ Cómo ejecutar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clona el repositorio:
 
-## Learn More
+   > ```bash
+   > $ git clone https://github.com/thalia-mijas/Filmatic-Next.git
+   > $ cd Filmatic-Next
+   > ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Instala las dependencias:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   > ```bash
+   > $ npm install
+   > ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Crea un archivo **`.env`** que contenga las siguientes variables de entorno:
 
-## Deploy on Vercel
+   > ```
+   > # The Movie Database API Token (TMDB)
+   > DB_TOKEN="your_api_token"
+   > ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Ejecuta el servidor en modo desarrollo:
+   > ```bash
+   > $ npm run dev
+   > ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
